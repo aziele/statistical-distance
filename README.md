@@ -71,17 +71,17 @@ print(d.google(v1, v2))
 
 ## References
 
-1. Bhattacharyya A (1947) On a measure of divergence between two statistical populations defined by probability distributions, Bull. Calcutta Math. Soc., 35, 99–109.
+1. Bhattacharyya A (1947) On a measure of divergence between two statistical populations defined by probability distributions. Bull. Calcutta Math. Soc., 35, 99–109.
 
-2. Bray JR, Curtis JT (1957) An ordination of the upland forest of the southern Winsconsin. Ecological Monographies, 27, 325-349.
+2. Bray JR, Curtis JT (1957) An ordination of the upland forest of the southern Winsconsin. Ecological Monographies. 27, 325-349.
 
-3. Deza M, Deza E (2009) Encyclopedia of Distances. Springer-Verlag Berlin Heidelberg. 1-590.
+3. Deza M, Deza E (2009) Encyclopedia of Distances. Springer-Verlag Berlin Heidelberg. 1-590. [doi: [10.1007/978-3-642-30958-8](https://doi.org/10.1007/978-3-642-30958-8)]
 
 4. Dice LR (1945) Measures of the amount of ecologic association between species. Ecology. 26, 297-302.
 
 5. Gavin DG et al. (2003) A statistical approach to evaluating distance metrics and analog assignments for pollen records. Quaternary Research 60:356–367. [doi: [10.1016/S0033-5894(03)00088-7](https://doi.org/10.1016/S0033-5894(03)00088-7)]
 
-6. Gower JC. (1971) General Coefficient of Similarity and Some of Its Properties, Biometrics 27, 857-874.
+6. Gower JC. (1971) General Coefficient of Similarity and Some of Its Properties. Biometrics 27, 857-874. [doi: [10.2307/2528823](https://doi.org/10.2307/2528823)]
 
 7. Jeffreys H (1946) An Invariant Form for the Prior Probability in Estimation Problems. Proc.Roy.Soc.Lon., Ser. A 186, 453-461.
 
@@ -93,7 +93,7 @@ print(d.google(v1, v2))
 
 11. Lee & Rashid (2008) Information Technology, ITSim 2008. [doi:[10.1109/ITSIM.2008.4631601](https://doi.org/10.1109/ITSIM.2008.4631601)].
 
-12. Lin J. (1991) Divergence measures based on the Shannon entropy. IEEE Transactions on Information Theory, 37(1):145–151.
+12. Lin J. (1991) Divergence measures based on the Shannon entropy. IEEE Transactions on Information Theory, 37(1):145–151. [doi: [10.1109/18.61115](https://doi.org/10.1109/18.61115)]
 
 13. Neyman J (1949) Contributions to the theory of the chi^2 test. In Proceedings of the First Berkley Symposium on Mathematical Statistics and Probability.
 
@@ -101,6 +101,6 @@ print(d.google(v1, v2))
 
 15. Sung-Hyuk C (2007) Comprehensive Survey on Distance/Similarity Measures between Probability Density Functions. International Journal of Mathematical Models and Methods in Applied Sciences. vol. 1(4), pp. 300-307 [[pdf](http://www.fisica.edu.uy/~cris/teaching/Cha_pdf_distances_2007.pdf)].
 
-16. Taneja IJ. (1995) New Developments in Generalized Information Measures, Chapter in: Advances in Imaging and Electron Physics, Ed. P.W. Hawkes, 91, 37-135.
+16. Taneja IJ. (1995) New Developments in Generalized Information Measures, Chapter in: Advances in Imaging and Electron Physics, Ed. P.W. Hawkes, 91, 37-135. [doi: [10.1016/S1076-5670(08)70106-X](https://doi.org/10.1016/S1076-5670(08)70106-X)]
 
 17. Virtanen P. (2020) SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature Methods. 17, 261–272. [doi: [10.1038/s41592-019-0686-2](https://doi.org/10.1038/s41592-019-0686-2)].
