@@ -11,13 +11,13 @@ A python module with functions to calculate distance/disimilarity measures betwe
 import numpy as np
 from distance import Distance
 
-d = Distance()
 u = np.array([0.2, 0.4, 0.2, 0.2])
 v = np.array([0.7, 0.1, 0.1, 0.1])
 
+d = Distance()
+
 print(d.euclidean(u, v))
 # 0.6
-
 print(d.google(u, v))
 # 0.5
 ```
