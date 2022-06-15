@@ -4,7 +4,6 @@ A python module with functions to calculate distance/disimilarity measures betwe
 ## Requirements
 * [Python](https://www.python.org) >= 3.6
 * [numpy](http://www.numpy.org) >= 1.16.4
-    > Use pip to install: `python3 -m pip install numpy`
 
 ## Usage
 
@@ -13,13 +12,13 @@ import numpy as np
 from distance import Distance
 
 d = Distance()
-v1 = np.array([0.2, 0.4, 0.2, 0.2])
-v2 = np.array([0.7, 0.1, 0.1, 0.1])
+u = np.array([0.2, 0.4, 0.2, 0.2])
+v = np.array([0.7, 0.1, 0.1, 0.1])
 
-print(d.euclidean(v1, v2))
+print(d.euclidean(u, v))
 # 0.6
 
-print(d.google(v1, v2))
+print(d.google(u, v))
 # 0.5
 ```
 
@@ -95,7 +94,7 @@ print(d.google(v1, v2))
 
 12. Lin J. (1991) Divergence measures based on the Shannon entropy. IEEE Transactions on Information Theory, 37(1):145–151. [doi: [10.1109/18.61115](https://doi.org/10.1109/18.61115)]
 
-13. Neyman J (1949) Contributions to the theory of the chi^2 test. In Proceedings of the First Berkley Symposium on Mathematical Statistics and Probability.
+13. Neyman J (1949) Contributions to the theory of the chi^2 test. Proceedings of the First Berkley Symposium on Mathematical Statistics and Probability, pp. 239-73 [doi: [10.1525/9780520327016-030](https://doi.org/10.1525/9780520327016-030)]
 
 14. Pearson K. (1900) On the Criterion that a given system of deviations from the probable in the case of correlated system of variables is such that it can be reasonable supposed to have arisen from random sampling, Phil. Mag. 50, 157-172.
 

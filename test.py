@@ -45,13 +45,33 @@ class TestDistance(unittest.TestCase):
                 func(u, v), correct_values[i], places=6
             )
 
+    def test_acc(self):
+        correct_values = [0.385, 0.705, 0.63, 0.345, 0]
+        self.func_test(self.d.acc, correct_values)
+
+    def test_braycurtis(self):
+        correct_values = [0.2526316, 0.47, 0.42, 0.23, 0]
+        self.func_test(self.d.braycurtis, correct_values)
+
+    def test_canberra(self):
+        correct_values = [0.757169, 1.660306, 1.661341, 0.467908, 0]
+        self.func_test(self.d.canberra, correct_values)
+
     def test_chebyshev(self):
         correct_values = [0.29, 0.47, 0.42, 0.23, 0]
         self.func_test(self.d.chebyshev, correct_values)
 
+    def test_czekanowski(self):
+        correct_values = [0.2526316, 0.47, 0.42, 0.23, 0]
+        self.func_test(self.d.czekanowski, correct_values)
+
     def test_euclidean(self):
         correct_values = [0.341467, 0.602163, 0.517494, 0.325269, 0]
         self.func_test(self.d.euclidean, correct_values)  
+
+    def test_gower(self):
+        correct_values = [0.16, 0.313333, 0.28, 0.153333, 0]
+        self.func_test(self.d.gower, correct_values) 
 
     def test_manhattan(self):
         correct_values = [0.48, 0.94, 0.84, 0.46, 0]
