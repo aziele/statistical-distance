@@ -65,6 +65,10 @@ class TestDistance(unittest.TestCase):
         correct_values = [0.2526316, 0.47, 0.42, 0.23, 0]
         self.func_test(self.d.czekanowski, correct_values)
 
+    def test_divergence(self):
+        correct_values = [0.556360, 2.5588168, 2.5007261, 0.222638, 0]
+        self.func_test(self.d.divergence, correct_values)
+
     def test_euclidean(self):
         correct_values = [0.341467, 0.602163, 0.517494, 0.325269, 0]
         self.func_test(self.d.euclidean, correct_values)  
@@ -77,8 +81,28 @@ class TestDistance(unittest.TestCase):
         correct_values = [0.48, 0.94, 0.84, 0.46, 0]
         self.func_test(self.d.manhattan, correct_values)            
 
+    def test_kl_divergence(self):
+        correct_values = [0.077513, 12.480004, 0.523377, 0.112098, 0]
+        self.func_test(self.d.kl_divergence, correct_values) 
+
+    def test_kulczynski(self):
+        correct_values = [0.676056, 1.773585, 1.448276, 0.597403, 0]
+        self.func_test(self.d.kulczynski, correct_values) 
+
+    def test_neyman_chisq(self):
+        correct_values = [0.490779, 1.349947, 0.350859, 0.213737, 0]
+        self.func_test(self.d.neyman_chisq, correct_values)
+
+    def test_pearson_chisq(self):
+        correct_values = [0.3485125, 0.355905, 1.0134, 0.243107, 0]
+        self.func_test(self.d.pearson_chisq, correct_values)
+
+    def test_soergel(self):
+        correct_values = [0.403361, 0.639456, 0.591549, 0.373984, 0]
+        self.func_test(self.d.soergel, correct_values) 
+
     def test_sqeuclidean(self):
         correct_values = [0.1166, 0.3626, 0.2678, 0.1058, 0]
-        self.func_test(self.d.sqeuclidean, correct_values)  
+        self.func_test(self.d.sqeuclidean, correct_values)
 
 unittest.main()

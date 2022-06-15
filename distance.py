@@ -32,7 +32,7 @@ class Distance:
 
     def add_chisq(self, u, v):
         """
-        Addictive Symmetric Chi-square distance.
+        Additive Symmetric Chi-square distance.
 
         References:
             1. Sung-Hyuk C (2007) Comprehensive Survey on Distance/Similarity 
@@ -559,7 +559,7 @@ class Distance:
 
         """
         with np.errstate(divide='ignore'):
-           return np.sum(np.where(v != 0, (u-v)**2/v, 0))
+           return np.sum(np.where(u != 0, (u-v)**2/u, 0))
 
     def nonintersection(self, u, v):
         """
@@ -599,7 +599,7 @@ class Distance:
                1(4), 300-307.
         """
         with np.errstate(divide='ignore'):
-            return np.sum(np.where(u != 0, (u-v)**2/u, 0))
+            return np.sum(np.where(v != 0, (u-v)**2/v, 0))
 
     def penroseshape(self, u, v):
         """
