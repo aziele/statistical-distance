@@ -25,50 +25,48 @@ print(d.google(v1, v2))
 
 ## Distance measures
 
-| Distance | Synonymes | References |
-| ----------- | ----------- | --------- |
-| ACC distance | Average distance | [8, 15] |
-| Addictive Symmetric Chi-square distance | - | [15] |
-| Bhattacharyya distance | - | [1, 15] |
-| Bray-Curtis distance | Sørensen distance, Bray-Curtis dissimilarity | [2, 15] |
-| Canberra distance | - | [15] |
-| Chebyshev distance | Chessboard distance, King-move metric, Maximum value distance, Minimax approximation | [15] |
-| Clark distance | - | [15] |
-| Cosine distance | - | [17] |
-| Czekanowski distance | - | [15] |
-| Dice dissimilarity | - | [4, 15] |
-| Divergence | - | [15] |
-| Euclidean distance | Pythagorean metric | [15] |
-| Gower distance | - | [6, 15] |
-| Hellinger distance | - | [15] |
-| Intersection distance | Non-overlaps | [15] |
-| Jaccard distance | - | [15] |
-| Jeffreys divergence | J divergence | [7, 15] |
-| Jensen-Shannon divergence | - | [12, 15] |
-| K divergence | - | [15] |
-| Kulczynski distance | - | [15] |
-| Kullback-Leibler divergence | KL divergence, relative entropy, information deviation |
-| Kumar-Johnson distance | - | [10, 15] |
-| Lorentzian distance | - | [15] |
-| Manhattan distance | City block distance, Rectilinear distance, Taxicab norm | [15] |
-| Maryland Bridge distance | - | [3] |
-| Matusita distance | - | [15] |
-| Minkowski distance | - | [15] |
-| Motyka distance | - | [15] |
-| Neyman chi-square distance | - | [13, 15] |
-| Normalized Google Distance (NGD) | - | [11] |
-| Pearson chi-square divergence | - | [14, 15] |
-| Penrose shape distance | - | [3] |
-| Soergel distance | - | [15] |
-| Squared chi-square distance | Triangular discrimination | [15] |
-| Squared Euclidean distance | - | [5, 15] |
-| Squared-chord distance | - | [5, 15] |
-| Taneja distance | - | [15, 16] |
-| Tanimoto distance | - | [15] |
-| Topsøe distance | Information statistic | [15] |
-| Vicis Symmetric chi-square distance | - | [15] |
-| Vicis-Wave Hedges distance | - | [15] |
-| Wave Hedges distance | - | [15] |
+| Distance | References |
+| ----------- | --------- |
+| ACC distance | [8, 15] |
+| Addictive Symmetric Chi-square distance | [15] |
+| Bhattacharyya distance | [1, 15] |
+| Bray-Curtis distance | [2, 15] |
+| Canberra distance | [15] |
+| Chebyshev distance | [15] |
+| Clark distance | [15] |
+| Cosine distance | [17] |
+| Czekanowski distance | [15] |
+| Dice dissimilarity | [4, 15] |
+| Divergence | [15] |
+| Euclidean distance | [15] |
+| Gower distance | [6, 15] |
+| Hellinger distance | [15] |
+| Intersection distance | [15] |
+| Jaccard distance | [15] |
+| Jeffreys divergence | [7, 15] |
+| Jensen-Shannon divergence | [12, 15] |
+| K divergence | [15] |
+| Kulczynski distance | [15] |
+| Kullback-Leibler divergence | [10, 15] |
+| Lorentzian distance | [15] |
+| Manhattan distance | [3] |
+| Matusita distance | [15] |
+| Minkowski distance | [15] |
+| Motyka distance | [15] |
+| Neyman chi-square distance | [13, 15] |
+| Normalized Google Distance (NGD) | [11] |
+| Pearson chi-square divergence | [14, 15] |
+| Penrose shape distance | [3] |
+| Soergel distance | [15] |
+| Squared chi-square distance | [15] |
+| Squared Euclidean distance | [5, 15] |
+| Squared-chord distance | [5, 15] |
+| Taneja distance | [15, 16] |
+| Tanimoto distance | [15] |
+| Topsøe distance | [15] |
+| Vicis Symmetric chi-square distance | [15] |
+| Vicis-Wave Hedges distance | [15] |
+| Wave Hedges distance | [15] |
 
 
 ## References
