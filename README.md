@@ -1,10 +1,10 @@
 # statistical-distances
-A python module with distance measures between two probability density functions. The measures can be applied to compare points in vector spaces (vectors of the same size).
+A python module with functions to calculate distance/disimilarity measures between two probability density functions. The module can be used to compare points in vector spaces (vectors of the same size).
 
 ## Requirements
 * [Python](https://www.python.org) >= 3.6
 * [numpy](http://www.numpy.org) >= 1.16.4
- > Use pip to install: `python3 -m pip install numpy`
+    > Use pip to install: `python3 -m pip install numpy`
 
 ## Usage
 
@@ -81,7 +81,7 @@ print(d.google(v1, v2))
 
 4. Dice LR (1945) Measures of the amount of ecologic association between species. Ecology. 26, 297-302.
 
-5. Gavin DG et al. (2003) A statistical approach to evaluating distance metrics and analog assignments for pollen records. Quaternary Research 60:356–367.
+5. Gavin DG et al. (2003) A statistical approach to evaluating distance metrics and analog assignments for pollen records. Quaternary Research 60:356–367. [doi: [10.1016/S0033-5894(03)00088-7](https://doi.org/10.1016/S0033-5894(03)00088-7)]
 
 6. Gower JC. (1971) General Coefficient of Similarity and Some of Its Properties, Biometrics 27, 857-874.
 
@@ -93,7 +93,7 @@ print(d.google(v1, v2))
 
 10. Kumar P, Johnson A. (2005) On a symmetric divergence measure and information inequalities, Journal of Inequalities in pure and applied Mathematics. 6(3).
 
-11. Lee & Rashid (2008) Information Technology, ITSim 2008. doi:10.1109/ITSIM.2008.4631601.
+11. Lee & Rashid (2008) Information Technology, ITSim 2008. [doi:[10.1109/ITSIM.2008.4631601](https://doi.org/10.1109/ITSIM.2008.4631601)].
 
 12. Lin J. (1991) Divergence measures based on the Shannon entropy. IEEE Transactions on Information Theory, 37(1):145–151.
 
@@ -105,4 +105,4 @@ print(d.google(v1, v2))
 
 16. Taneja IJ. (1995) New Developments in Generalized Information Measures, Chapter in: Advances in Imaging and Electron Physics, Ed. P.W. Hawkes, 91, 37-135.
 
-17. Virtanen P. (2020) SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature Methods. 17, 261–272. [[10.1038/s41592-019-0686-2](https://doi.org/10.1038/s41592-019-0686-2)].
+17. Virtanen P. (2020) SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature Methods. 17, 261–272. [doi: [10.1038/s41592-019-0686-2](https://doi.org/10.1038/s41592-019-0686-2)].
