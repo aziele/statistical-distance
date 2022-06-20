@@ -50,6 +50,7 @@ print(d.google(u, v))
 | Lorentzian distance | [15] |
 | Manhattan distance | [3] |
 | Matusita distance | [15] |
+| Max-symmetric chi-square distance | [15] |
 | Minkowski distance | [15] |
 | Motyka distance | [15] |
 | Neyman chi-square distance | [13, 15] |

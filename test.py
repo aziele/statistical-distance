@@ -160,6 +160,10 @@ class TestDistance(unittest.TestCase):
         correct_values = [0.355673, 0.704327, 0.607504, 0.233683, 0]
         self.func_test(self.d.matusita, correct_values)
 
+    def test_max_symmetric_chisq(self):
+        correct_values = [0.604068, 1.349947, 1.0134, 0.243107, 0]
+        self.func_test(self.d.max_symmetric_chisq, correct_values)
+
     def test_minkowski(self):
         correct_values = [0.403237, 0.602163, 0.517494, 0.325269, 0]
         self.func_test(self.d.minkowski, correct_values)

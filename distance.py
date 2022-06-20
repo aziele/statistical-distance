@@ -146,27 +146,6 @@ class Distance:
         """
         return np.sqrt(np.nansum(np.power(np.abs(u-v)/(u+v),2)))
 
-    # def correlation_pearson(self, u, v):
-    #     """
-    #     Pearson correlation distance.
-
-    #     Returns a distance value between 0 and 2.
-
-    #     """
-    #     r = ma.corrcoef(u, v)[0, 1]
-    #     return 1.0 - r
-
-    # def correlation(self, u, v):
-    #     """
-    #     Correlation distance.
-    #     """
-    #     # TODO: fix nan when diveded by 0 and no std
-    #     umu = u.mean()
-    #     vmu = v.mean()
-    #     um = u - umu
-    #     vm = v - vmu
-    #     return 1.0 - np.dot(um, vm) / (np.linalg.norm(um)*np.linalg.norm(vm))
-
     def cosine(self, u, v):
         """
         Cosine distance.
@@ -507,6 +486,19 @@ class Distance:
 
         """
         return np.sqrt(np.sum((np.sqrt(u)-np.sqrt(v))**2))
+
+    def max_symmetric_chisq(self, u, v):
+        """
+        Max-symmetric chisq.
+
+        References:
+            1. Sung-Hyuk C. (2007) Comprehensive Survey on Distance/Similarity 
+               Measures between Probability Density Functions. International
+               Journal of Mathematical Models and Methods in Applied Sciences.
+               1(4):300-307.
+
+        """
+        return max(self.neyman_chisq(u, v), self.pearson_chisq(u, v))
 
     def minkowski(self, u, v, p=2):
         """
