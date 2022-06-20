@@ -506,7 +506,7 @@ class Distance:
                1(4):300-307.
 
         """
-        return np.sqrt(2 - 2*np.sum(np.sqrt(u*v)))
+        return np.sqrt(np.sum((np.sqrt(u)-np.sqrt(v))**2))
 
     def minkowski(self, u, v, p=2):
         """
@@ -570,7 +570,8 @@ class Distance:
             Intersection distance
 
         Notes:
-            The distance between two pdfs is Manhattan distance divded by 2.
+            When used for comparing two probability density functions (pdfs),
+            Nonintersection distance equals half of Manhattan distance.
 
         References:
             1. Sung-Hyuk C. (2007) Comprehensive Survey on Distance/Similarity 
@@ -669,7 +670,7 @@ class Distance:
         """
         return np.sum((np.sqrt(u) - np.sqrt(v))**2)
 
-    def sqeuclidean(self, u, v):
+    def squared_euclidean(self, u, v):
         """
         Squared Euclidean distance.
 
@@ -779,7 +780,6 @@ class Distance:
             u_v = (u - v)**2
             uvmin = np.minimum(u, v)**2
             return np.sum(np.where(uvmin != 0, u_v/uvmin, 0))
-
 
     def wave_hedges(self, u, v):
         """
