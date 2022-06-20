@@ -3,7 +3,6 @@ Distance measures to compare two probability density functions (pdfs).
 """
 
 import numpy as np
-import numpy.ma as ma
 
 
 class Distance:
@@ -155,6 +154,16 @@ class Distance:
 
         """
         return 1 - np.dot(u, v)/(np.sqrt(np.dot(u, u))*np.sqrt(np.dot(v, v)))
+
+    def correlation_pearson(self, u, v):
+        """
+        Pearson correlation distance.
+
+        Returns a distance value between 0 and 2.
+
+        """
+        r = np.ma.corrcoef(u, v)[0, 1]
+        return 1.0 - r
 
     def czekanowski(self, u, v):
         """
@@ -743,21 +752,6 @@ class Distance:
         dr = v * np.log(2*v/(u+v))
         return np.sum(dl + dr)
 
-    def vicis_wave_hedges(self, u, v):
-        """
-        Vicis-Wave Hedges distance.
-
-        References:
-            1. Sung-Hyuk C (2007) Comprehensive Survey on Distance/Similarity 
-               Measures between Probability Density Functions. International
-               Journal of Mathematical Models and Methods in Applied Sciences.
-               1(4), 300-307
-        """
-        with np.errstate(divide='ignore'):
-            u_v = abs(u - v)
-            uvmin = np.minimum(u, v)
-            return np.sum(np.where(uvmin != 0, u_v/uvmin, 0))
-
     def vicis_symmetric_chisq(self, u, v):
         """
         Vicis Symmetric chi-square distance.
@@ -771,6 +765,21 @@ class Distance:
         with np.errstate(divide='ignore'):
             u_v = (u - v)**2
             uvmin = np.minimum(u, v)**2
+            return np.sum(np.where(uvmin != 0, u_v/uvmin, 0))
+
+    def vicis_wave_hedges(self, u, v):
+        """
+        Vicis-Wave Hedges distance.
+
+        References:
+            1. Sung-Hyuk C (2007) Comprehensive Survey on Distance/Similarity 
+               Measures between Probability Density Functions. International
+               Journal of Mathematical Models and Methods in Applied Sciences.
+               1(4), 300-307
+        """
+        with np.errstate(divide='ignore'):
+            u_v = abs(u - v)
+            uvmin = np.minimum(u, v)
             return np.sum(np.where(uvmin != 0, u_v/uvmin, 0))
 
     def wave_hedges(self, u, v):

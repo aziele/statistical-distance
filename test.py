@@ -88,6 +88,10 @@ class TestDistance(unittest.TestCase):
         correct_values = [0.216689, 0.370206, 0.272996, 0.097486, 0]
         self.func_test(self.d.cosine, correct_values)
 
+    def test_correlation_pearson(self):
+        correct_values = [1.995478, 1.755929, 1.008617, 0.254193, 0]
+        self.func_test(self.d.correlation_pearson, correct_values)
+
     def test_czekanowski(self):
         correct_values = [0.29, 0.47, 0.42, 0.23, 0]
         self.func_test(self.d.czekanowski, correct_values)

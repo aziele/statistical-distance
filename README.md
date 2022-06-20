@@ -24,49 +24,52 @@ print(d.google(u, v))
 
 ## Distance measures
 
-| Distance | References |
-| ----------- | --------- |
-| ACC distance | [8, 15] |
-| Addictive Symmetric Chi-square distance | [15] |
-| Bhattacharyya distance | [1, 15] |
-| Bray-Curtis distance | [2, 15] |
-| Canberra distance | [15] |
-| Chebyshev distance | [15] |
-| Clark distance | [15] |
-| Cosine distance | [17] |
-| Czekanowski distance | [15] |
-| Dice dissimilarity | [4, 15] |
-| Divergence | [15] |
-| Euclidean distance | [15] |
-| Gower distance | [6, 15] |
-| Hellinger distance | [15] |
-| Intersection distance | [15] |
-| Jaccard distance | [15] |
-| Jeffreys divergence | [7, 15] |
-| Jensen-Shannon divergence | [12, 15] |
-| K divergence | [15] |
-| Kulczynski distance | [15] |
-| Kullback-Leibler divergence | [10, 15] |
-| Lorentzian distance | [15] |
-| Manhattan distance | [3] |
-| Matusita distance | [15] |
-| Max-symmetric chi-square distance | [15] |
-| Minkowski distance | [15] |
-| Motyka distance | [15] |
-| Neyman chi-square distance | [13, 15] |
-| Normalized Google Distance (NGD) | [11] |
-| Pearson chi-square divergence | [14, 15] |
-| Penrose shape distance | [3] |
-| Soergel distance | [15] |
-| Squared chi-square distance | [15] |
-| Squared Euclidean distance | [5, 15] |
-| Squared-chord distance | [5, 15] |
-| Taneja distance | [15, 16] |
-| Tanimoto distance | [15] |
-| Topsøe distance | [15] |
-| Vicis Symmetric chi-square distance | [15] |
-| Vicis-Wave Hedges distance | [15] |
-| Wave Hedges distance | [15] |
+| Distance | Method | References |
+| ----------- | --------- | --------- |
+| ACC distance | `acc` | [8, 15] |
+| Addictive Symmetric Chi-square distance | `add_chisq` | [15] |
+| Bhattacharyya distance | `bhattacharyya` | [1, 15] |
+| Bray-Curtis distance | `braycurtis` | [2, 15] |
+| Canberra distance | `canberra` | [15] |
+| Chebyshev distance | `chebyshev` | [15] |
+| Clark distance | `clark` | [15] |
+| Cosine distance | `cosine` | [17] |
+| Correlation (Pearson) distance | `correlation_pearson` | [17] |
+| Czekanowski distance | `czekanowski` | [15] |
+| Dice dissimilarity | `dice` | [4, 15] |
+| Divergence | `divergence` | [15] |
+| Euclidean distance | `euclidean` | [15] |
+| Gower distance | `gower` | [6, 15] |
+| Hellinger distance | `hellinger` | [15] |
+| Intersection distance | `nonintersection` | [15] |
+| Jaccard distance | `jaccard` | [15] |
+| Jeffreys divergence | `jeffreys` | [7, 15] |
+| Jensen-Shannon divergence | `jensenshannon_divergence` | [12, 15] |
+| K divergence | `k_divergence` | [15] |
+| Kulczynski distance | `kulczynski` | [15] |
+| Kullback-Leibler divergence | `kl_divergence` | [9, 15] |
+| Kumar-Johnson distance | `kumarjohnson` | [10, 15] |
+| Lorentzian distance | `lorentzian` | [15] |
+| Manhattan distance | `manhattan` | [3] |
+| Maryland Bridge distance | `marylandbridge` | [3] |
+| Matusita distance | `matusita` | [15] |
+| Max-symmetric chi-square distance | `max_symmetric_chisq` | [15] |
+| Minkowski distance | `minkowski` | [15] |
+| Motyka distance | `motyka` | [15] |
+| Neyman chi-square distance | `neyman_chisq` | [13, 15] |
+| Normalized Google Distance (NGD) | `gower` | [11] |
+| Pearson chi-square divergence | `pearson_chisq` | [14, 15] |
+| Penrose shape distance | `penroseshape` | [3] |
+| Soergel distance | `soergel` | [15] |
+| Squared chi-square distance | `squared_chisq` | [15] |
+| Squared-chord distance | `squaredchord` | [5, 15] |
+| Squared Euclidean distance | `squared_euclidean` | [5, 15] |
+| Taneja distance | `taneja` | [15, 16] |
+| Tanimoto distance | `tanimoto` | [15] |
+| Topsøe distance | `topsoe` | [15] |
+| Vicis Symmetric chi-square distance | `vicis_symmetric_chisq` | [15] |
+| Vicis-Wave Hedges distance | `vicis_wave_hedges` | [15] |
+| Wave Hedges distance | `wave_hedges` | [15] |
 
 
 ## References
