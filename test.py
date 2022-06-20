@@ -132,6 +132,10 @@ class TestDistance(unittest.TestCase):
         correct_values = [0.062220, 0.191254, 0.145167, 0.027169, 0]
         self.func_test(self.d.jensenshannon_divergence, correct_values)        
 
+    def test_jensen_difference(self):
+        correct_values = [0.062220, 0.191254, 0.145167, 0.027169, 0]
+        self.func_test(self.d.jensen_difference, correct_values) 
+
     def test_k_divergence(self):
         correct_values = [0.061723, 0.146679, 0.176323, 0.0266046, 0]
         self.func_test(self.d.k_divergence, correct_values)

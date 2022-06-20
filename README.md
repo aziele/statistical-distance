@@ -45,6 +45,7 @@ print(d.google(u, v))
 | Jaccard distance | `jaccard` | [15] |
 | Jeffreys divergence | `jeffreys` | [7, 15] |
 | Jensen-Shannon divergence | `jensenshannon_divergence` | [12, 15] |
+| Jensen difference | `jensen_difference` | [12, 15] |
 | K divergence | `k_divergence` | [15] |
 | Kulczynski distance | `kulczynski` | [15] |
 | Kullback-Leibler divergence | `kl_divergence` | [9, 15] |

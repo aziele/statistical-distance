@@ -357,6 +357,26 @@ class Distance:
         dr = v * np.log(2*v/(u+v))
         return (np.sum(dl) + np.sum(dr)) / 2
 
+    def jensen_difference(self, u, v):
+        """
+        Jensen difference
+
+        Comments:
+            Seems equal to Jensen-Shannon divergence.
+
+        References:
+            1. Sung-Hyuk C. (2007) Comprehensive Survey on Distance/Similarity 
+               Measures between Probability Density Functions. International
+               Journal of Mathematical Models and Methods in Applied Sciences.
+               1(4), 300-307.        
+
+        """
+        u = np.where(u==0, self.epsilon, u)
+        v = np.where(v==0, self.epsilon, v)        
+        el1 = (u * np.log(u) + v * np.log(v)) / 2
+        el2 = (u + v) / 2
+        return np.sum(el1 - el2 * np.log(el2))
+
     def k_divergence(self, u, v):
         """
         K divergence.
