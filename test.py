@@ -78,12 +78,6 @@ class TestDistance(unittest.TestCase):
         correct_values = [0.598728, 1.131109, 1.118196, 0.333645, 0]
         self.func_test(self.d.clark, correct_values)
 
-    def test_clark_relation(self):
-        for u, v in self.vectors:
-            self.assertEqual( 
-                self.d.clark(u, v), np.sqrt(self.d.divergence(u, v) / 2)
-            )
-
     def test_cosine(self):
         correct_values = [0.216689, 0.370206, 0.272996, 0.097486, 0]
         self.func_test(self.d.cosine, correct_values)
@@ -250,6 +244,12 @@ class TestDistance(unittest.TestCase):
                 self.d.manhattan(u, v) / 2
             )
 
+    def test_rel_clark_divergence(self):
+        for u, v in self.vectors:
+            self.assertEqual( 
+                self.d.clark(u, v), np.sqrt(self.d.divergence(u, v) / 2)
+            )
+
     def test_rel_euclidean_square_euclidean(self):
         for u, v in self.vectors:
             self.assertAlmostEqual( 
@@ -257,7 +257,7 @@ class TestDistance(unittest.TestCase):
                 self.d.squared_euclidean(u, v), places=6
             )
 
-    def test_google_relation(self):
+    def test_rel_google_manhattan(self):
         for u, v in self.vectors:
             self.assertAlmostEqual( 
                 self.d.google(u, v), self.d.manhattan(u, v) / 2, places=6

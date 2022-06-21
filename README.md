@@ -83,7 +83,7 @@ print(d.google(u, v))
 
 4. Dice LR (1945) Measures of the amount of ecologic association between species. Ecology. 26, 297-302.
 
-5. Gavin DG et al. (2003) A statistical approach to evaluating distance metrics and analog assignments for pollen records. Quaternary Research 60:356–367. [doi: [10.1016/S0033-5894(03)00088-7](https://doi.org/10.1016/S0033-5894(03)00088-7)]
+5. Gavin DG et al. (2003) A statistical approach to evaluating distance metrics and analog assignments for pollen records. Quaternary Research 60, 356–367. [doi: [10.1016/S0033-5894(03)00088-7](https://doi.org/10.1016/S0033-5894(03)00088-7)]
 
 6. Gower JC. (1971) General Coefficient of Similarity and Some of Its Properties. Biometrics 27, 857-874. [doi: [10.2307/2528823](https://doi.org/10.2307/2528823)]
 
@@ -91,20 +91,20 @@ print(d.google(u, v))
 
 8. Krause EF (2012) Taxicab Geometry An Adventure in Non-Euclidean Geometry. Dover Publications. ISBN-13: 978-0486252025.
 
-9. Kullback S, Leibler RA (1951) On information and sufficiency. Ann. Math. Statist. 22:79–86
+9. Kullback S, Leibler RA (1951) On information and sufficiency. Ann. Math. Statist. 22, 79–86
 
 10. Kumar P, Johnson A. (2005) On a symmetric divergence measure and information inequalities, Journal of Inequalities in pure and applied Mathematics. 6(3).
 
 11. Lee & Rashid (2008) Information Technology, ITSim 2008. [doi:[10.1109/ITSIM.2008.4631601](https://doi.org/10.1109/ITSIM.2008.4631601)].
 
-12. Lin J. (1991) Divergence measures based on the Shannon entropy. IEEE Transactions on Information Theory, 37(1):145–151. [doi: [10.1109/18.61115](https://doi.org/10.1109/18.61115)]
+12. Lin J. (1991) Divergence measures based on the Shannon entropy. IEEE Transactions on Information Theory, 37(1), 145–151. [doi: [10.1109/18.61115](https://doi.org/10.1109/18.61115)]
 
-13. Neyman J (1949) Contributions to the theory of the chi^2 test. Proceedings of the First Berkley Symposium on Mathematical Statistics and Probability, pp. 239-73 [doi: [10.1525/9780520327016-030](https://doi.org/10.1525/9780520327016-030)]
+13. Neyman J (1949) Contributions to the theory of the chi^2 test. Proceedings of the First Berkley Symposium on Mathematical Statistics and Probability, 239-73 [doi: [10.1525/9780520327016-030](https://doi.org/10.1525/9780520327016-030)]
 
-14. Pearson K. (1900) On the Criterion that a given system of deviations from the probable in the case of correlated system of variables is such that it can be reasonable supposed to have arisen from random sampling, Phil. Mag. 50, 157-172.
+14. Pearson K. (1900) On the Criterion that a given system of deviations from the probable in the case of correlated system of variables is such that it can be reasonable supposed to have arisen from random sampling. Phil. Mag. 50, 157-172.
 
-15. Sung-Hyuk C (2007) Comprehensive Survey on Distance/Similarity Measures between Probability Density Functions. International Journal of Mathematical Models and Methods in Applied Sciences. vol. 1(4), pp. 300-307 [[pdf](http://www.fisica.edu.uy/~cris/teaching/Cha_pdf_distances_2007.pdf)].
+15. Sung-Hyuk C (2007) Comprehensive Survey on Distance/Similarity Measures between Probability Density Functions. International Journal of Mathematical Models and Methods in Applied Sciences. 1(4), 300-307 [[pdf](http://www.fisica.edu.uy/~cris/teaching/Cha_pdf_distances_2007.pdf)].
 
-16. Taneja IJ. (1995) New Developments in Generalized Information Measures, Chapter in: Advances in Imaging and Electron Physics, Ed. P.W. Hawkes, 91, 37-135. [doi: [10.1016/S1076-5670(08)70106-X](https://doi.org/10.1016/S1076-5670(08)70106-X)]
+16. Taneja IJ. (1995) New Developments in Generalized Information Measures. Chapter in: Advances in Imaging and Electron Physics, Ed. P.W. Hawkes, 91, 37-135. [doi: [10.1016/S1076-5670(08)70106-X](https://doi.org/10.1016/S1076-5670(08)70106-X)]
 
 17. Virtanen P. (2020) SciPy 1.0: fundamental algorithms for scientific computing in Python. Nature Methods. 17, 261–272. [doi: [10.1038/s41592-019-0686-2](https://doi.org/10.1038/s41592-019-0686-2)].
