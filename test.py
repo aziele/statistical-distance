@@ -29,8 +29,8 @@ uv4 = [
 
 # Test case 5: u and v are identical.
 uv5 = [
-   np.array([0.20, 0.40, 0.40]),
-   np.array([0.20, 0.40, 0.40])
+   np.array([0.20, 0.05, 0.40, 0.30, 0.05]),
+   np.array([0.20, 0.05, 0.40, 0.30, 0.05])
 ]
 
 

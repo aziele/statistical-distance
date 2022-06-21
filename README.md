@@ -1,5 +1,5 @@
 # statistical-distances
-A python module with functions to calculate distance/disimilarity measures between two probability density functions. The module can be used to compare points in vector spaces (vectors of the same size).
+A python module with functions to calculate distance/dissimilarity measures between two probability density functions (pdfs). The module can be used to compare points in vector spaces.
 
 ## Requirements
 * [Python](https://www.python.org) >= 3.6
