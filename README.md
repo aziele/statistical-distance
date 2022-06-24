@@ -73,6 +73,10 @@ print(d.google(u, v))
 | `wave_hedges` | Wave Hedges distance | [15] |
 
 
+## Caveats to implementation
+Some measures are prone to the division by zero and the log of zero. In this implementation, 0/0 is treated as 0, and 0 log0 is also treated as 0. For the division by zero and log of zero cases, the zero is replaced by a very small value close to 0.
+
+
 ## References
 
 1. Bhattacharyya A (1947) On a measure of divergence between two statistical populations defined by probability distributions. Bull. Calcutta Math. Soc., 35, 99–109.

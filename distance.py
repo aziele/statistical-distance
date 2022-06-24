@@ -4,11 +4,11 @@ Distance measures to compare two probability density functions (pdfs).
 
 import numpy as np
 
-
 class Distance:
 
     def __init__(self, epsilon=None):
         self.epsilon = np.finfo(float).eps if not epsilon else epsilon
+
 
     def acc(self, u, v):
         """
@@ -28,6 +28,7 @@ class Distance:
 
         """
         return (self.manhattan(u, v) + self.chebyshev(u, v))/2
+
 
     def add_chisq(self, u, v):
         """
@@ -64,6 +65,7 @@ class Distance:
         """
         return -np.log(np.sum(np.sqrt(u*v)))
 
+
     def braycurtis(self, u, v):
         """
         Bray-Curtis distance.
@@ -72,7 +74,7 @@ class Distance:
             Sørensen distance
             Bray-Curtis dissimilarity
         
-        Note:
+        Notes:
             When used for comparing two probability density functions (pdfs),
             Bray-Curtis distance equals Manhattan distance divided by 2.
 
@@ -88,9 +90,14 @@ class Distance:
         """
         return np.sum(np.abs(u - v)) / np.sum(np.abs(u + v))
 
+
     def canberra(self, u, v):
         """
         Canberra distance.
+
+        Notes:
+            When `u[i]` and `v[i]` are 0 for given i, then the fraction 0/0 = 0
+            is used in the calculation.
 
         References:
             1. Sung-Hyuk C. (2007) Comprehensive Survey on Distance/Similarity 
@@ -99,11 +106,9 @@ class Distance:
                1(4), 300-307.
 
         """
-        try:
-            d = np.nansum(np.abs(u - v) / (np.abs(u) + np.abs(v)))
-        finally:
-            np.seterr(invalid='ignore')
-        return d
+        with np.errstate(invalid='ignore'):
+            return np.nansum(np.abs(u - v) / (np.abs(u) + np.abs(v)))
+
 
     def chebyshev(self, u, v):
         """
@@ -123,6 +128,7 @@ class Distance:
         """
         return np.amax(np.abs(u - v))
 
+
     def chebyshev_min(self, u, v):
         """
         Minimum value distance (my measure).
@@ -130,11 +136,16 @@ class Distance:
         """
         return np.amin(np.abs(u - v))
 
+
     def clark(self, u, v):
         """
         Clark distance.
 
         Clark distance equals the squared root of half of the divergence.
+
+        Notes:
+            When `u[i]` and `v[i]` are 0 for given i, then the fraction 0/0 = 0
+            is used in the calculation.
 
         References:
             1. Sung-Hyuk C. (2007) Comprehensive Survey on Distance/Similarity 
@@ -143,7 +154,9 @@ class Distance:
                1(4), 300-307.
 
         """
-        return np.sqrt(np.nansum(np.power(np.abs(u-v)/(u+v),2)))
+        with np.errstate(divide='ignore', invalid="ignore"):
+            return np.sqrt(np.nansum(np.power(np.abs(u-v)/(u+v),2)))
+
 
     def cosine(self, u, v):
         """
@@ -155,6 +168,7 @@ class Distance:
         """
         return 1 - np.dot(u, v)/(np.sqrt(np.dot(u, u))*np.sqrt(np.dot(v, v)))
 
+
     def correlation_pearson(self, u, v):
         """
         Pearson correlation distance.
@@ -164,6 +178,7 @@ class Distance:
         """
         r = np.ma.corrcoef(u, v)[0, 1]
         return 1.0 - r
+
 
     def czekanowski(self, u, v):
         """
@@ -177,6 +192,7 @@ class Distance:
 
         """
         return np.sum(np.abs(u - v)) / np.sum(u + v)
+
 
     def dice(self, u, v):
         """
@@ -196,6 +212,7 @@ class Distance:
         u_v = u - v
         return np.dot(u_v, u_v) / (np.dot(u, u) + np.dot(v, v))
 
+
     def divergence(self, u, v):
         """
         Divergence.
@@ -209,7 +226,9 @@ class Distance:
                1(4), 300-307.
 
         """
-        return 2 * np.nansum(np.power(u-v,2) / np.power(u+v,2))
+        with np.errstate(invalid="ignore"):
+            return 2 * np.nansum(np.power(u-v,2) / np.power(u+v,2))
+
 
     def euclidean(self, u, v):
         """
@@ -226,6 +245,7 @@ class Distance:
         """
         return np.linalg.norm(u-v)
 
+
     def google(self, u, v):
         """
         Normalized Google Distance (NGD).
@@ -234,7 +254,7 @@ class Distance:
         as two different web pages and the each word frequency represents 
         terms found in each webpage.
 
-        Note:
+        Notes:
             When used for comparing two probability density functions (pdfs),
             Google distance equals half of Manhattan distance.
 
@@ -247,6 +267,7 @@ class Distance:
         y = float(np.sum(v))
         summin = float(np.sum(np.minimum(u, v)))
         return (max([x, y]) - summin) / ((x + y) - min([x, y]))
+
 
     def gower(self, u, v):
         """
@@ -265,11 +286,12 @@ class Distance:
         """
         return np.sum(np.abs(u - v)) / u.size
 
+
     def hellinger(self, u, v):
         """
         Hellinger distance.
 
-        Note:
+        Notes:
             This implementation produces values two times larger than values
             obtained by Hellinger distance described in Wikipedia and also
             in https://gist.github.com/larsmans/3116927.
@@ -286,6 +308,7 @@ class Distance:
         """
         return np.sqrt(2*np.sum((np.sqrt(u) - np.sqrt(v)) ** 2))
 
+
     def jaccard(self, u, v):
         """
         Jaccard distance.
@@ -299,6 +322,7 @@ class Distance:
         """
         uv = np.dot(u, v)
         return 1 - (uv / (np.dot(u, u) + np.dot(v, v) - uv))
+
 
     def jeffreys(self, u, v):
         """
@@ -325,11 +349,12 @@ class Distance:
         v = np.where(v==0, self.epsilon, v)
         return np.sum((u-v) * np.log(u / v))
 
+
     def jensenshannon_divergence(self, u, v):
         """
         Jensen-Shannon divergence.
 
-        Note:
+        Notes:
             1. Equals half of Topsøe distance
             2. Equals squared jensenshannon_distance.
 
@@ -352,10 +377,11 @@ class Distance:
 
         """
         u = np.where(u==0, self.epsilon, u)
-        v = np.where(v==0, self.epsilon, v)        
+        v = np.where(v==0, self.epsilon, v)     
         dl = u * np.log(2*u/(u+v))
         dr = v * np.log(2*v/(u+v))
         return (np.sum(dl) + np.sum(dr)) / 2
+
 
     def jensen_difference(self, u, v):
         """
@@ -377,6 +403,7 @@ class Distance:
         el2 = (u + v) / 2
         return np.sum(el1 - el2 * np.log(el2))
 
+
     def k_divergence(self, u, v):
         """
         K divergence.
@@ -391,6 +418,7 @@ class Distance:
         u = np.where(u==0, self.epsilon, u)
         v = np.where(v==0, self.epsilon, v)
         return np.sum(u*np.log(2*u/(u+v)))
+
 
     def kl_divergence(self, u, v):
         """
@@ -412,6 +440,7 @@ class Distance:
         v = np.where(v==0, self.epsilon, v)
         return np.sum(u * np.log(u / v))
 
+
     def kulczynski(self, u, v):
         """
         Kulczynski distance.
@@ -424,6 +453,7 @@ class Distance:
 
         """
         return np.sum(np.abs(u - v)) / np.sum(np.minimum(u, v))
+
 
     def kumarjohnson(self, u, v):
         """
@@ -440,10 +470,11 @@ class Distance:
 
         """
         uvmult = u*v
-        with np.errstate(divide='ignore'):
+        with np.errstate(divide='ignore', invalid='ignore'):
             numer = np.power(u**2 - v**2, 2)
             denom = 2 * np.power(uvmult, 3/2)
             return np.sum(np.where(uvmult != 0, numer/denom, 0))
+
 
     def lorentzian(self, u, v):
         """
@@ -455,12 +486,13 @@ class Distance:
                Journal of Mathematical Models and Methods in Applied Sciences.
                1(4):300-307.        
 
-        Note:
+        Notes:
             One (1) is added to guarantee the non-negativity property and to 
             eschew the log of zero
 
         """
         return np.sum(np.log(np.abs(u-v)+1))
+
 
     def manhattan(self, u, v):
         """
@@ -488,6 +520,7 @@ class Distance:
         """
         return np.sum(np.abs(u - v))
 
+
     def marylandbridge(self, u, v):
         """
         Maryland Bridge distance.
@@ -499,6 +532,7 @@ class Distance:
         """
         uvdot = np.dot(u, v)
         return 1 - (uvdot/np.dot(u, u) + uvdot/np.dot(v, v))/2
+
 
     def matusita(self, u, v):
         """
@@ -516,6 +550,7 @@ class Distance:
         """
         return np.sqrt(np.sum((np.sqrt(u)-np.sqrt(v))**2))
 
+
     def max_symmetric_chisq(self, u, v):
         """
         Max-symmetric chisq.
@@ -528,6 +563,7 @@ class Distance:
 
         """
         return max(self.neyman_chisq(u, v), self.pearson_chisq(u, v))
+
 
     def minkowski(self, u, v, p=2):
         """
@@ -549,6 +585,7 @@ class Distance:
         """
         return np.linalg.norm(u - v, ord=p)
 
+
     def motyka(self, u, v):
         """
         Motyka distance.
@@ -565,6 +602,7 @@ class Distance:
         """
         return np.sum(np.maximum(u, v)) / np.sum(u + v)
 
+
     def neyman_chisq(self, u, v):
         """
         Neyman chi-square distance.
@@ -579,8 +617,9 @@ class Distance:
                1(4), 300-307.
 
         """
-        with np.errstate(divide='ignore'):
+        with np.errstate(divide='ignore', invalid='ignore'):
            return np.sum(np.where(u != 0, (u-v)**2/u, 0))
+
 
     def nonintersection(self, u, v):
         """
@@ -603,6 +642,7 @@ class Distance:
         """
         return 1 - np.sum(np.minimum(u, v))
 
+
     def pearson_chisq(self, u, v):
         """
         Pearson chi-square divergence.
@@ -620,8 +660,9 @@ class Distance:
                Journal of Mathematical Models and Methods in Applied Sciences.
                1(4), 300-307.
         """
-        with np.errstate(divide='ignore'):
+        with np.errstate(divide='ignore', invalid='ignore'):
             return np.sum(np.where(v != 0, (u-v)**2/v, 0))
+
 
     def penroseshape(self, u, v):
         """
@@ -635,6 +676,7 @@ class Distance:
         umu = np.mean(u)
         vmu = np.mean(v)
         return np.sqrt(np.sum(((u-umu)-(v-vmu))**2))
+
 
     def soergel(self, u, v):
         """
@@ -653,6 +695,7 @@ class Distance:
         """
         return np.sum(np.abs(u - v)) / np.sum(np.maximum(u, v))
 
+
     def squared_chisq(self, u, v):
         """
         Squared chi-square distance.
@@ -668,7 +711,7 @@ class Distance:
 
         """
         uvsum = u + v
-        with np.errstate(divide='ignore'):
+        with np.errstate(divide='ignore', invalid='ignore'):
             return np.sum(np.where(uvsum != 0, (u-v)**2/uvsum, 0))
 
 
@@ -691,6 +734,7 @@ class Distance:
         """
         return np.sum((np.sqrt(u) - np.sqrt(v))**2)
 
+
     def squared_euclidean(self, u, v):
         """
         Squared Euclidean distance.
@@ -709,6 +753,7 @@ class Distance:
 
         """
         return np.dot((u - v), (u - v))
+
 
     def taneja(self, u, v):
         """
@@ -729,6 +774,7 @@ class Distance:
         uvsum = u + v
         return np.sum((uvsum/2)*np.log(uvsum/(2*np.sqrt(u*v))))
 
+
     def tanimoto(self, u, v):
         """
         Tanimoto distance.
@@ -748,6 +794,7 @@ class Distance:
         vsum = np.sum(v)
         minsum = np.sum(np.minimum(u, v))
         return (usum + vsum - 2*minsum) / (usum + vsum - minsum)
+
 
     def topsoe(self, u, v):
         """
@@ -772,6 +819,7 @@ class Distance:
         dr = v * np.log(2*v/(u+v))
         return np.sum(dl + dr)
 
+
     def vicis_symmetric_chisq(self, u, v):
         """
         Vicis Symmetric chi-square distance.
@@ -782,10 +830,11 @@ class Distance:
                Journal of Mathematical Models and Methods in Applied Sciences.
                1(4), 300-307
         """
-        with np.errstate(divide='ignore'):
+        with np.errstate(divide='ignore', invalid='ignore'):
             u_v = (u - v)**2
             uvmin = np.minimum(u, v)**2
             return np.sum(np.where(uvmin != 0, u_v/uvmin, 0))
+
 
     def vicis_wave_hedges(self, u, v):
         """
@@ -797,10 +846,11 @@ class Distance:
                Journal of Mathematical Models and Methods in Applied Sciences.
                1(4), 300-307
         """
-        with np.errstate(divide='ignore'):
+        with np.errstate(divide='ignore', invalid='ignore'):
             u_v = abs(u - v)
             uvmin = np.minimum(u, v)
             return np.sum(np.where(uvmin != 0, u_v/uvmin, 0))
+
 
     def wave_hedges(self, u, v):
         """
@@ -813,7 +863,7 @@ class Distance:
                1(4), 300-307
 
         """
-        with np.errstate(divide='ignore'):
+        with np.errstate(divide='ignore', invalid='ignore'):
             u_v = abs(u - v)
             uvmax = np.maximum(u, v)
             return np.sum(np.where(((u_v != 0) & (uvmax != 0)), u_v/uvmax, 0))
