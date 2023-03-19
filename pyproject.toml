@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "statistical-distance"
+authors = [
+    {name = "Andrzej Zielezinski", email = "a.zielezinski@gmail.com"},
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+keywords = ["distance", "statistics", "measure", "metric"]
+requires-python = ">=3.6"
+dependencies = [
+    "numpy >=1.16.4",
+]
+dynamic = ["version", "description"]
+
+[tool.flit.module]
+name = "distance"
+
+[project.urls]
+Documentation = "https://github.com/aziele/statistical-distance"
+Source = "https://github.com/aziele/statistical-distance"

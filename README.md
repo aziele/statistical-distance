@@ -1,24 +1,38 @@
-# statistical-distances
+# statistical-distance
 A python module with functions to calculate distance/dissimilarity measures between two probability density functions (pdfs). The module can be used to compare points in vector spaces.
 
 ## Requirements
 * [Python](https://www.python.org) >= 3.6
 * [numpy](http://www.numpy.org) >= 1.16.4
 
+## Installation
+You can install the module from [PyPI](https://pypi.org/project/statistical-distance/):
+
+```bash
+pip install statistical-distance
+```
+
+or directly from GitHub:
+
+```bash
+pip install "git+https://github.com/aziele/statistical-distance.git"
+```
+
+Alternatively, you can use the module without installtion. Simply clone or download this repository and you're ready to use it.
+
+
 ## Usage
 
 ```python
 import numpy as np
-from distance import Distance
+import distance
 
 u = np.array([0.2, 0.4, 0.2, 0.2])
 v = np.array([0.7, 0.1, 0.1, 0.1])
 
-d = Distance()
-
-print(d.euclidean(u, v))
+print(distance.euclidean(u, v))
 # 0.6
-print(d.google(u, v))
+print(distance.google(u, v))
 # 0.5
 ```
 
@@ -75,6 +89,18 @@ print(d.google(u, v))
 
 ## Caveats to implementation
 Some measures are prone to the division by zero and the log of zero. In this implementation, 0/0 is treated as 0, and 0 log0 is also treated as 0. For the division by zero and log of zero cases, the zero is replaced by a very small value close to 0.
+
+
+## Test
+You can run tests to ensure that the module works as expected.
+
+```
+python test.py
+```
+
+## License
+
+[GNU General Public License, version 3](https://www.gnu.org/licenses/gpl-3.0.html)
 
 
 ## References
